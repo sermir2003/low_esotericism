@@ -1,0 +1,19 @@
+/snap/clion/234/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/234/bin/ninja/linux/x64/ninja -DCMAKE_C_COMPILER=/usr/bin/clang-14 -DCMAKE_CXX_COMPILER=/usr/bin/clang++-14 -G Ninja -S /home/sermir/hse/coursework/numerical-methods/non-linear/low-esotericism -B /home/sermir/hse/coursework/numerical-methods/non-linear/low-esotericism/cmake-build-debug
+CMake Warning (dev) at /snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FetchContent.cmake:1284 (message):
+  The DOWNLOAD_EXTRACT_TIMESTAMP option was not given and policy CMP0135 is
+  not set.  The policy's OLD behavior will be used.  When using a URL
+  download, the timestamps of extracted files should preferably be that of
+  the time of extraction, otherwise code that depends on the extracted
+  contents might not be rebuilt if the URL changes.  The OLD behavior
+  preserves the timestamps from the archive instead, but this is usually not
+  what you want.  Update your project to the NEW behavior or specify the
+  DOWNLOAD_EXTRACT_TIMESTAMP option with a value of true to avoid this
+  robustness issue.
+Call Stack (most recent call first):
+  CMakeLists.txt:10 (FetchContent_Declare)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Using the multi-header code from /home/sermir/hse/coursework/numerical-methods/non-linear/low-esotericism/cmake-build-debug/_deps/json-src/include/
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/sermir/hse/coursework/numerical-methods/non-linear/low-esotericism/cmake-build-debug

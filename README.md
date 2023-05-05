@@ -1,4 +1,4 @@
-# twineq
+# low_esotericism
 
 A project in modern C++ that calculates an approximate solution of the equilibrium equation in the case of a three-parameter closure.
 
@@ -17,11 +17,11 @@ make
 
 Biological and technical data are entered using json files. To create such a file, enter
 ```bash
-./twineq newtask
+./low_esotericism newtask
 ```
 to create a file with default name,  or
 ```bash
-./twineq newtask research_name
+./low_esotericism newtask research_name
 ```
 if you want to specify a research name and it would be `research_name.json`.
 
@@ -72,11 +72,11 @@ $$m(x)=\frac{1}{\text{sigma_m}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x^2}{\text{
 
 To start the calculations, enter
 ```bash
-./twineq solve
+./low_esotericism solve
 ```
 to use data from a file with a default name,  or
 ```bash
-./twineq solve research_name.json
+./low_esotericism solve research_name.json
 ```
 if you want to specify a research name.
 

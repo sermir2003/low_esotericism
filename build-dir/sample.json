@@ -1,0 +1,18 @@
+{
+    "Grid count": 5001,
+    "Integration area radius": 20,
+    "Iteration count": 1000,
+    "Kernels": {
+        "limit m": -1,
+        "limit w": -1,
+        "sigma m": 1,
+        "sigma w": 1,
+        "type": "Gauss"
+    },
+    "alpha": 1,
+    "b": 1,
+    "beta": 1,
+    "d": 0,
+    "d'": 1,
+    "gamma": 1
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wall -O3 -ggdb CMakeFiles/low_esotericism.dir/main.cpp.o CMakeFiles/low_esotericism.dir/task.cpp.o CMakeFiles/low_esotericism.dir/kernels.cpp.o CMakeFiles/low_esotericism.dir/cmd_args_parser.cpp.o CMakeFiles/low_esotericism.dir/solver.cpp.o CMakeFiles/low_esotericism.dir/progress_counter.cpp.o -o low_esotericism 

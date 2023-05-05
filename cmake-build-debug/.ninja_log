@@ -1,12 +1,8 @@
 # ninja log v5
-1	516	1682330505313150137	CMakeFiles/low_esotericism.dir/kernels.cpp.o	957f99ecffb320d
-0	362	1682330505161149212	CMakeFiles/low_esotericism.dir/main.cpp.o	11d23de28acac1fb
-1	710	1682338625481162321	CMakeFiles/low_esotericism.dir/progress_counter.cpp.o	e3f85fc0ba1d3bde
-1	1686	1682338626457168800	CMakeFiles/low_esotericism.dir/main.cpp.o	6e029bf45c2051f
-1	1791	1682338626561169493	CMakeFiles/low_esotericism.dir/solver.cpp.o	1c4c9a8d4b83d26e
 1	1808	1682338626577169600	CMakeFiles/low_esotericism.dir/kernels.cpp.o	657ce02480e55786
-1	1837	1682338626605169787	CMakeFiles/low_esotericism.dir/cmd_args_parser.cpp.o	34ba49a113b4b9f1
-1	4542	1682338629305187978	CMakeFiles/low_esotericism.dir/task.cpp.o	fcdb0a6604276e39
-4543	4655	1682338629429188823	low_esotericism	765797f4f2c6c7d1
-1	1601	1682338669301499597	CMakeFiles/low_esotericism.dir/solver.cpp.o	1c4c9a8d4b83d26e
+1	1686	1682338626457168800	CMakeFiles/low_esotericism.dir/main.cpp.o	6e029bf45c2051f
 1601	1670	1682338669373500228	low_esotericism	765797f4f2c6c7d1
+1	710	1682338625481162321	CMakeFiles/low_esotericism.dir/progress_counter.cpp.o	e3f85fc0ba1d3bde
+1	1601	1682338669301499597	CMakeFiles/low_esotericism.dir/solver.cpp.o	1c4c9a8d4b83d26e
+1	4542	1682338629305187978	CMakeFiles/low_esotericism.dir/task.cpp.o	fcdb0a6604276e39
+1	1837	1682338626605169787	CMakeFiles/low_esotericism.dir/cmd_args_parser.cpp.o	34ba49a113b4b9f1

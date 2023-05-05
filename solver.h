@@ -2,20 +2,29 @@
 #include <vector>
 #include "task.h"
 #include "progress_counter.h"
+#include <fftw3.h>
 
 class Solver {
+public:
+    virtual Result Solve() = 0;
+    virtual ~Solver() {
+    }
+};
+
+class LinearSolver : public Solver {
 private:
-    const Task& p_;  /* biological data (p because of "problem", as it was called by Mikhail) */
+    const Task& p;  /* biological data (p because of "problem", as it was called by Mikhail) */
     std::string calculation_name_;
 
     double N;
-    std::vector<double> C;
+    double dotProd_wQ;
+    std::vector<double> Q;
     std::vector<double> m;
     std::vector<double> w;
-    std::vector<double> conv_wC;
-    std::vector<double> conv_mC;
-    std::vector<double> conv_CwC;
-    std::vector<double> multi_Cw;
+    std::vector<double> conv_wQ;
+    std::vector<double> conv_mQ;
+    std::vector<double> conv_QwQ;
+    std::vector<double> multi_Qw;
 private:
     void VectorMultiplication(const std::vector<double>& f, const std::vector<double>& g,
                           std::vector<double>& result);
@@ -25,6 +34,6 @@ private:
                            std::vector<double>& result);
     void RecalculateConvolutions();
 public:
-    Solver(const Task& task, const std::string& calculation_name);
-    Result Solve();
+    LinearSolver(const Task& task, const std::string& calculation_name);
+    Result Solve() override;
 };

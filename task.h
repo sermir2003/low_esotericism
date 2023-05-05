@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-const std::string kTaskFileDefaultName = "TaskFile.json";
+const std::string kTaskFileDefaultName = "sample";
 
 class Task {
 private:
@@ -23,7 +23,7 @@ private:
     double radius_;          /* integration limit */
     double step_size_;       /* step between nodes */
 
-    std::string path_result_file_;  /* path for storing data */
+    std::string research_name_;  /* path for storing data */
 public:
     Task() = delete;
     Task(const Task& other) = delete;
@@ -46,7 +46,7 @@ public:
     int iter() const { return iter_; }
     double radius() const { return radius_; }
     double step_size() const { return step_size_; }
-    std::string PathResultFile() const { return path_result_file_; }
+    std::string ResearchName() const { return research_name_; }
 };
 
 struct Result {

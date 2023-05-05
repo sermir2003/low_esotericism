@@ -21,9 +21,9 @@ int main(int argc, char* argv[]) {
     }
     else if (request->GetType() == InputRequestType::SOLVE) {
         Task task(static_cast<RequestCreateTaskFile*>(request.get())->path_task_file);
-        Solver solver(task, "Search for equilibrium");
-        Result result = solver.Solve();
-        result.SaveToFile(task.PathResultFile());
+        std::unique_ptr<Solver> solver = std::make_unique<LinearSolver>(task, "Search for equilibrium");
+        Result result = solver->Solve();
+        result.SaveToFile(task.ResearchName());
     }
     else if (request->GetType() == InputRequestType::HELP) {
         std::cout << "The developer of this program needs help himself.\n"

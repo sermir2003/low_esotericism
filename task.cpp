@@ -17,7 +17,6 @@ Json file_content = {
     {"d", 0},
     {"d'", 1},
     {"b", 1},
-    {"Name of result file", "result"},
     {"Kernels", {
             {"type", "Gauss"},
             {"sigma m", 1},
@@ -29,11 +28,11 @@ Json file_content = {
 };
 
 void Task::CreateTaskFile(const std::string& task_file_name) {
-    std::ofstream file(task_file_name, std::ios::out);
+    std::ofstream file(task_file_name + ".json", std::ios::out);
     file << std::setw(4) << file_content << std::endl;
 }
 Task::Task(const std::string& task_file_name) {
-    std::ifstream file(task_file_name, std::ios::in);
+    std::ifstream file(task_file_name + ".json", std::ios::in);
     Json data_json;
     file >> data_json;
     try {
@@ -46,7 +45,7 @@ Task::Task(const std::string& task_file_name) {
         d_ = data_json["d"].get<double>();
         s_ = data_json["d'"].get<double>();
         b_ = data_json["b"].get<double>();
-        path_result_file_ = data_json["Name of result file"].get<std::string>();
+        research_name_ = task_file_name;
         kernels_ = MakeKernels(data_json["Kernels"].get<Json>());
         step_size_ = radius_ / (nodes_ - 1);
     } catch (...) {
@@ -61,6 +60,7 @@ void Result::SaveToFile(std::string path_result_file) {
     }
     {
         std::ofstream file_C(path_result_file + "_C.csv", std::ios::out);
+        file_C << "x,y\n";
         double x = 0;
         for (int i = 0; i < nodes; ++i) {
             file_C << std::fixed << std::setprecision(8) << x << ',' << C[i] << '\n';

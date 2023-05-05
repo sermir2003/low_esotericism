@@ -49,14 +49,17 @@ The standart deviations for the death and birth kernels
 where sigma w and sigma m are standard deviations for the death and birth kernels, and limit w and limit m --- limits of the kernels.
 
 The kernels in this case are the following
-$$m(x)=\begin{cases}
+```math
+m(x)=\begin{cases}
     \frac{1}{\text{sigma_m}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x^2}{\text{sigma_m}^2}\right)} & x\leqslant \text{limit_m}, \\\
     0, & x> \text{limit_m}
-\end{cases}$$
+\end{cases}
+```
 
 You can set the parameters to -1 if you want the kernel to have no limits and the kernel to look like this:
-
-$$m(x)=\frac{1}{\text{sigma_m}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x^2}{\text{sigma_m}^2}\right)}$$
+```math
+m(x)=\frac{1}{\text{sigma_m}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x^2}{\text{sigma_m}^2}\right)}
+```
 
 #### Other parameters
 

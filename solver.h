@@ -5,13 +5,6 @@
 #include <fftw3.h>
 
 class Solver {
-public:
-    virtual Result Solve() = 0;
-    virtual ~Solver() {
-    }
-};
-
-class LinearSolver : public Solver {
 private:
     const Task& p;  /* biological data (p because of "problem", as it was called by Mikhail) */
     std::string calculation_name_;
@@ -29,11 +22,11 @@ private:
     void VectorMultiplication(const std::vector<double>& f, const std::vector<double>& g,
                           std::vector<double>& result);
     double DotProduct(const std::vector<double>& f, const std::vector<double>& g);
-    double Convolution(const std::vector<double>& f, const std::vector<double>& g, double x_ind);
+    double ElementConvolution(const std::vector<double>& f, const std::vector<double>& g, double x_ind);
     void VectorConvolution(const std::vector<double>& f, const std::vector<double>& g,
                            std::vector<double>& result);
     void RecalculateConvolutions();
 public:
-    LinearSolver(const Task& task, const std::string& calculation_name);
-    Result Solve() override;
+    Solver(const Task& task, const std::string& calculation_name);
+    Result Solve();
 };

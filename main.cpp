@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     }
     else if (request->GetType() == InputRequestType::SOLVE) {
         Task task(static_cast<RequestCreateTaskFile*>(request.get())->path_task_file);
-        std::unique_ptr<Solver> solver = std::make_unique<LinearSolver>(task, "Search for equilibrium");
+        std::unique_ptr<Solver> solver = std::make_unique<Solver>(task, "Search for equilibrium");
         Result result = solver->Solve();
         result.SaveToFile(task.ResearchName());
     }

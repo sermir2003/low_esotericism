@@ -95,7 +95,7 @@ To then build a line graph in the form of an image, you need to run a special py
 ```bash
 python3 plot_maker.py research_name
 ```
-to build a graph image for the data from file`research_name_C.csv`.
+to build a graph image for the data from file `research_name_C.csv`.
 
 ## License
 

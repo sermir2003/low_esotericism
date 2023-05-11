@@ -7,7 +7,6 @@
 class Solver {
 private:
     const Task& p;  /* biological data (p because of "problem", as it was called by Mikhail) */
-    std::string calculation_name_;
 
     double N;
     double dotProd_wQ;
@@ -22,11 +21,12 @@ private:
     void VectorMultiplication(const std::vector<double>& f, const std::vector<double>& g,
                           std::vector<double>& result);
     double DotProduct(const std::vector<double>& f, const std::vector<double>& g);
-    double ElementConvolution(const std::vector<double>& f, const std::vector<double>& g, double x_ind);
+    double ElementConvolution(const std::vector<double>& f, const std::vector<double>& g, int x_ind);
     void VectorConvolution(const std::vector<double>& f, const std::vector<double>& g,
                            std::vector<double>& result);
     void RecalculateConvolutions();
 public:
-    Solver(const Task& task, const std::string& calculation_name);
-    Result Solve();
+    explicit Solver(const Task& task);
+    void Init();
+    double Solve();
 };

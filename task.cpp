@@ -21,8 +21,6 @@ Json file_content = {
             {"type", "Gauss"},
             {"sigma m", 1},
             {"sigma w", 1},
-            {"limit m", -1},
-            {"limit w", -1},
         }
     },
 };
@@ -46,11 +44,27 @@ Task::Task(const std::string& task_file_name) {
         s_ = data_json["d'"].get<double>();
         b_ = data_json["b"].get<double>();
         research_name_ = task_file_name;
-        kernels_ = MakeKernels(data_json["Kernels"].get<Json>());
+        Json kernels_info = data_json["Kernels"].get<Json>();
+        kernels_ = GaussKernels(kernels_info["sigma m"].get<double>(),
+                                                        kernels_info["sigma w"].get<double>());
         step_size_ = radius_ / (nodes_ - 1);
     } catch (...) {
         throw TaskFileParseException("Task file parse exception");
     }
+}
+Task::Task(double sigma_m, double sigma_w) :
+      kernels_(sigma_m, sigma_w),
+      b_(0.2),
+      s_(0.05),
+      d_(0.01),
+      alpha_(1),
+      beta_(1),
+      gamma_(1),
+      nodes_(3001),
+      iter_(500),
+      radius_(5),
+      step_size_(radius_ / (nodes_ - 1)),
+      research_name_("sample") {
 }
 
 void Result::SaveToFile(std::string path_result_file) {

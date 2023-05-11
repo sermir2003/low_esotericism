@@ -7,7 +7,7 @@ const std::string kTaskFileDefaultName = "sample";
 
 class Task {
 private:
-    std::unique_ptr<Kernels> kernels_;   /* birth and death parameters */
+    GaussKernels kernels_;   /* birth and death parameters */
 
     double b_;          /* birth rate */
     double s_;          /* competition rate */
@@ -26,16 +26,17 @@ private:
     std::string research_name_;  /* path for storing data */
 public:
     Task() = delete;
-    Task(const Task& other) = delete;
+    Task(double sigma_m, double sigma_w);
+    Task(const Task& other) = default;
     Task(Task&& other) = default;
-    Task& operator=(const Task& other) = delete;
+    Task& operator=(const Task& other) = default;
     Task& operator=(Task&& other) = default;
     ~Task() = default;
     Task(const std::string& task_file_name = kTaskFileDefaultName);
     static void CreateTaskFile(const std::string& task_file_name = kTaskFileDefaultName);
 
-    double m(double xi) const { return kernels_->m(xi); }
-    double w(double xi) const { return kernels_->w(xi); }
+    double m(double xi) const { return kernels_.m(xi); }
+    double w(double xi) const { return kernels_.w(xi); }
     double b() const { return b_; }
     double s() const { return s_; }
     double d() const { return d_; }
